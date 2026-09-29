@@ -91,6 +91,9 @@ const HARNESS_WRAPPER_TAGS = [
   "command-name", "command-message", "command-args",
   // CC `!` 前缀 shell 命令及其输出
   "bash-input", "bash-stdout", "bash-stderr",
+  // The proxy may prepend L1 recall inside a user-role message. It is
+  // context for the model, not text typed by the user.
+  "tdai_recalled_l1_memories",
 ];
 
 // 从左到右先匹配外层块：harness 内的 <user_query> 不能提升为用户输入；
